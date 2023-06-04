@@ -3,13 +3,13 @@ package chapter03;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class BaekJoon_15552 {
+public class BaekJoon_11021 {
 
 	public static void main(String[] args) throws Exception {
         
         Plus plus = new Plus();
         plus.init();
-        System.out.print(plus.calcLines(plus.getLineNum()));
+        System.out.print(plus.clacReadLine(plus.getLineNum()));
         
     }
     
@@ -24,17 +24,18 @@ public class BaekJoon_15552 {
             lineNum = Integer.parseInt(br.readLine());
         }
         
-        public int getLineNum(){
+        public int getLineNum() {
             return this.lineNum;
         }
         
-        public String calcLines (int lineNum) throws Exception {
-            sb = new StringBuilder(); 
-            for (int i = 0; i < lineNum; i++) {
+        public String clacReadLine(int lineNum) throws Exception {
+            sb = new StringBuilder();
+            
+            for (int i = 1; i <= lineNum; i++) {
                 String str = br.readLine();
                 int splitIdx = str.indexOf(" ");
-                int sum = Integer.parseInt(str.substring(0,splitIdx)) + Integer.parseInt(str.substring(splitIdx + 1));
-                sb.append(sum + "\n");
+                int sum = Integer.parseInt((str.substring(0,splitIdx))) + Integer.parseInt((str.substring(splitIdx + 1)));
+                sb.append("Case #" + i + ": " + sum + "\n");
             }
             br.close();
             return sb.toString();

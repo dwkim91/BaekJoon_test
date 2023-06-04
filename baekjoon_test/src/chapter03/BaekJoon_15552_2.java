@@ -1,9 +1,10 @@
 package chapter03;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class BaekJoon_15552 {
+public class BaekJoon_15552_2 {
 
 	public static void main(String[] args) throws Exception {
         
@@ -31,10 +32,11 @@ public class BaekJoon_15552 {
         public String calcLines (int lineNum) throws Exception {
             sb = new StringBuilder(); 
             for (int i = 0; i < lineNum; i++) {
-                String str = br.readLine();
-                int splitIdx = str.indexOf(" ");
-                int sum = Integer.parseInt(str.substring(0,splitIdx)) + Integer.parseInt(str.substring(splitIdx + 1));
+                String[] temp = br.readLine().split(" ");
+                int sum = Integer.parseInt(temp[0]) + Integer.parseInt(temp[1]);
                 sb.append(sum + "\n");
+                temp = null;
+                
             }
             br.close();
             return sb.toString();
